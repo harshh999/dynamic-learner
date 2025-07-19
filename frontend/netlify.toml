@@ -1,0 +1,15 @@
+    [build]
+      # Command to build your React frontend
+      command = "npm run build"
+      # Directory where your React build output will be placed
+      publish = "frontend/build"
+      # Directory where your Netlify Functions are located
+      functions = "netlify/functions"
+
+    # Redirects for your API calls to Netlify Functions
+    # This makes /api/* requests go to your functions
+    [[redirects]]
+      from = "/api/*"
+      to = "/.netlify/functions/:splat"
+      status = 200
+    
